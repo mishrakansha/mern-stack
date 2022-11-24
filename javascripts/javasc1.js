@@ -43,13 +43,13 @@
 // let q = Boolean(" ");
 // console.log(q, typeof q);
 // let r;
-function myfun() {
-    // s = Number(document.getElementById("str").value);
-    s = document.getElementById("str").value;
-    // document.write(Number(s));
-    document.getElementById("ans").innerHTML += +s + " " + typeof s;
-    // document.getElementById("ans").textContent += +s + " " + typeof s;
-}
+// function myfun() {
+// s = Number(document.getElementById("str").value);
+//   s = document.getElementById("str").value;
+// document.write(Number(s));
+//   document.getElementById("ans").innerHTML += +s + " " + typeof s;
+// document.getElementById("ans").textContent += +s + " " + typeof s;
+// }
 // console.log("this is a first string " + "this is sencond string");
 // console.log("6" - 2);
 // console.log("6" / 2);
@@ -87,10 +87,10 @@ function myfun() {
 
 var sum = 0;
 while (true) {
-    var number = prompt("enter your number");
-    if (Number(number) == 0 || !number || typeof number != Number) {
-        alert(sum);
-        break;
-    }
-    sum += Number(number);
+  var number = prompt("enter your number");
+  if (Number(number) == 0 || !number || typeof number != Number) {
+    alert(sum);
+    break;
+  }
+  sum += Number(number);
 }
