@@ -5,8 +5,8 @@ xhr.onload = function () {
   let data = this.response;
   data = JSON.parse(data);
   console.log(data);
+  document.getElementById("details").style.display = "block";
   document.getElementById("city").textContent = data.name;
-
   time = d.getHours() + ":" + d.getMinutes();
   document.getElementById("time").innerHTML = time;
   document.getElementById("temperature").innerHTML = data.main.temp + "°C";
@@ -18,8 +18,13 @@ xhr.onload = function () {
     '<i class="fas fa-wind fa-fw" style="color: #868B94;"></i>' +
     data.wind.speed +
     "Km/h";
-  document.getElementById("showimg").innerHTML =
-    '<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp" width="100px"></img>';
+  if (data.weather[0].main == "Clouds") {
+    document.getElementById("showimg").innerHTML =
+      '<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp" width="100px"></img>';
+  } else if (data.weather[0].main == "Clear") {
+    document.getElementById("showimg").innerHTML =
+      '<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp" width="100px"></img>';
+  }
 };
 xhr.onerror = function () {};
 
